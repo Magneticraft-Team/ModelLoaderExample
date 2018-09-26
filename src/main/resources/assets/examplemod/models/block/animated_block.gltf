@@ -1,0 +1,413 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 36,
+      "type": "VEC3",
+      "max": [
+        0.0625,
+        0.0625,
+        0.0625
+      ],
+      "min": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 36,
+      "type": "VEC2",
+      "max": [
+        0.875,
+        0.9375
+      ],
+      "min": [
+        0.125,
+        0.1875
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 36,
+      "type": "VEC2",
+      "max": [
+        0.875,
+        0.75
+      ],
+      "min": [
+        0.125,
+        0.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 36,
+      "type": "VEC2",
+      "max": [
+        1.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 5,
+      "type": "SCALAR",
+      "max": [
+        1.0
+      ],
+      "min": [
+        0.0
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 5,
+      "type": "VEC3",
+      "max": [
+        0.5,
+        0.0,
+        0.5
+      ],
+      "min": [
+        0.5,
+        0.0,
+        0.5
+      ]
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 5,
+      "type": "VEC4",
+      "max": [
+        0.0,
+        1.0,
+        0.0,
+        1.0
+      ],
+      "min": [
+        0.0,
+        -0.7071067690849304,
+        0.0,
+        -0.0
+      ]
+    }
+  ],
+  "animations": [
+    {
+      "name": "animation",
+      "channels": [
+        {
+          "sampler": 0,
+          "target": {
+            "node": 3,
+            "path": "translation"
+          }
+        },
+        {
+          "sampler": 1,
+          "target": {
+            "node": 3,
+            "path": "rotation"
+          }
+        }
+      ],
+      "samplers": [
+        {
+          "input": 4,
+          "interpolation": "LINEAR",
+          "output": 5
+        },
+        {
+          "input": 4,
+          "interpolation": "LINEAR",
+          "output": 6
+        }
+      ]
+    }
+  ],
+  "asset": {
+    "generator": "TO_BE_NAMED glTF v2 Exporter",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "animated_block.bin",
+      "byteLength": 1456
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 432,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 432,
+      "byteLength": 288,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 720,
+      "byteLength": 288,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1008,
+      "byteLength": 288,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1296,
+      "byteLength": 20
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1316,
+      "byteLength": 60
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1376,
+      "byteLength": 80
+    }
+  ],
+  "images": [
+    {
+      "uri": "minecraft:blocks/brick"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 1.0,
+        "roughnessFactor": 1.0
+      },
+      "alphaMode": "MASK",
+      "alphaCutoff": 0.5,
+      "doubleSided": false
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "TEXCOORD_0": 1
+          },
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "TEXCOORD_0": 2
+          },
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "TEXCOORD_0": 3
+          },
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "rotation": [
+        4.4703484E-8,
+        1.0,
+        1.3411045E-7,
+        -5.9952043E-15
+      ],
+      "scale": [
+        12.0,
+        4.0,
+        12.0
+      ],
+      "translation": [
+        0.8749999776482567,
+        0.24999986588955092,
+        0.8749999776482376
+      ],
+      "name": "Object 0"
+    },
+    {
+      "mesh": 1,
+      "rotation": [
+        0.0,
+        0.0,
+        1.0,
+        -4.4703484E-8
+      ],
+      "scale": [
+        12.0,
+        4.0,
+        12.0
+      ],
+      "translation": [
+        0.8749999776482567,
+        0.7500000335276117,
+        0.125
+      ],
+      "name": "Object 0"
+    },
+    {
+      "children": [
+        0,
+        1
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "translation": [
+        -0.5,
+        0.0,
+        -0.5
+      ],
+      "name": "Group 2"
+    },
+    {
+      "children": [
+        2
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "translation": [
+        0.5,
+        0.0,
+        0.5
+      ],
+      "name": "Group 4"
+    },
+    {
+      "mesh": 2,
+      "rotation": [
+        0.0,
+        0.0,
+        -8.940697E-8,
+        -1.0
+      ],
+      "scale": [
+        16.0,
+        4.0,
+        16.0
+      ],
+      "translation": [
+        2.23517470088197E-8,
+        -8.940696427650607E-8,
+        0.0
+      ],
+      "name": "Object 0"
+    },
+    {
+      "mesh": 2,
+      "rotation": [
+        1.0,
+        -4.18457E-16,
+        3.996803E-15,
+        4.4703484E-8
+      ],
+      "scale": [
+        16.0,
+        4.0,
+        16.0
+      ],
+      "translation": [
+        -6.70552321446749E-8,
+        1.0000000447034807,
+        0.999999977648254
+      ],
+      "name": "Object 0"
+    },
+    {
+      "children": [
+        3,
+        4,
+        5
+      ],
+      "name": "root"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9728,
+      "minFilter": 9728,
+      "wrapS": 10497,
+      "wrapT": 10497,
+      "name": "pixelated"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        6
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    }
+  ]
+}
