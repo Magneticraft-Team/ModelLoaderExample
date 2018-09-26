@@ -19,7 +19,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
- * This block is an example of a block with TileEntitySpecialRenderer
+ * This block is an example of a block with TileEntitySpecialRenderer and an animated model
  */
 public class AnimatedBlock extends Block implements IModelRegisterer, ITileEntityProvider {
 
