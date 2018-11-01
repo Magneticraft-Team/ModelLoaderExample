@@ -29,7 +29,7 @@ import net.minecraftforge.registries.IForgeRegistry;
     modid = ExampleMod.MOD_ID,
     name = ExampleMod.NAME,
     version = ExampleMod.VERSION,
-    dependencies = "required-after:modelloader@[1.1.4,)"
+    dependencies = "required-client:modelloader@[1.1.4,)"
 )
 public class ExampleMod {
 
