@@ -8,12 +8,12 @@ displayName="Example Mod"
 authors="Cout970"
 description=""
 
-#[[mods]]
-#modId="simple_item"
-#version="${file.jarVersion}"
-#displayName="Simple block with custom 3D model"
-#authors="Cout970"
-#description=""
+[[mods]]
+modId="simple_item"
+version="${file.jarVersion}"
+displayName="Simple block with custom 3D model"
+authors="Cout970"
+description=""
 
 [[mods]]
 modId="simple_block"
@@ -22,15 +22,22 @@ displayName="Simple block with custom 3D model"
 authors="Cout970"
 description=""
 
+[[mods]]
+modId="rotable_block"
+version="${file.jarVersion}"
+displayName="Block with horizontal orientation"
+authors="Cout970"
+description=""
+
 #[[mods]]
-#modId="rotable_block"
+#modId="animated_block"
 #version="${file.jarVersion}"
-#displayName="Block with horizontal orientation"
+#displayName="Block animation"
 #authors="Cout970"
 #description=""
 
 #[[mods]]
-#modId="animated_block"
+#modId="animated_item"
 #version="${file.jarVersion}"
 #displayName="Block animation"
 #authors="Cout970"
