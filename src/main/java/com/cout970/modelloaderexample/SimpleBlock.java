@@ -6,12 +6,17 @@ import com.cout970.modelloader.api.ModelRegisterEvent;
 import java.util.Objects;
 import net.minecraft.block.AbstractGlassBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.model.ModelRotation;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.world.IBlockReader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -40,7 +45,15 @@ public class SimpleBlock {
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = MOD_ID)
     public static class RegistryEvents {
 
-        private static Block ENGINE = new AbstractGlassBlock(Block.Properties.create(Material.IRON)){};
+        private static Block ENGINE = new AbstractGlassBlock(Block.Properties.create(Material.IRON)){
+            /**
+             * Makes the block transparent so other block sides don't become invisible.
+             */
+            @Override
+            public VoxelShape getRenderShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
+                return VoxelShapes.empty();
+            }
+        };
 
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {

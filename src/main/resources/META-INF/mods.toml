@@ -11,7 +11,7 @@ description=""
 [[mods]]
 modId="simple_item"
 version="${file.jarVersion}"
-displayName="Simple block with custom 3D model"
+displayName="Simple item with custom 3D model"
 authors="Cout970"
 description=""
 
@@ -29,17 +29,24 @@ displayName="Block with horizontal orientation"
 authors="Cout970"
 description=""
 
-#[[mods]]
-#modId="animated_block"
-#version="${file.jarVersion}"
-#displayName="Block animation"
-#authors="Cout970"
-#description=""
+[[mods]]
+modId="tile_block"
+version="${file.jarVersion}"
+displayName="Block with TileEntityRenderer"
+authors="Cout970"
+description=""
+
+[[mods]]
+modId="animated_block"
+version="${file.jarVersion}"
+displayName="Block animation"
+authors="Cout970"
+description=""
 
 #[[mods]]
 #modId="animated_item"
 #version="${file.jarVersion}"
-#displayName="Block animation"
+#displayName="Item animation"
 #authors="Cout970"
 #description=""
 

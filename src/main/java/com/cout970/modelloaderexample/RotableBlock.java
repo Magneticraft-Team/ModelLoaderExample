@@ -57,7 +57,7 @@ public class RotableBlock {
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = MOD_ID)
     public static class RegistryEvents {
 
-        private static Block ENGINE = new OrientableBlock(Block.Properties.create(Material.IRON));
+        private static Block ENGINE = new EngineBlock(Block.Properties.create(Material.IRON));
 
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
@@ -73,20 +73,18 @@ public class RotableBlock {
         }
     }
 
-    public static class OrientableBlock extends AbstractGlassBlock {
+    public static class EngineBlock extends AbstractGlassBlock {
 
         public static final DirectionProperty FACING = DirectionalBlock.FACING;
 
-        public OrientableBlock(Properties properties) {
+        public EngineBlock(Properties properties) {
             super(properties);
             setDefaultState(getDefaultState().with(FACING, Direction.NORTH));
         }
 
-//        @Override
-//        public boolean isSolid(BlockState state) {
-//            return false;
-//        }
-
+        /**
+         * Makes the block transparent so other block sides don't become invisible.
+         */
         @Override
         public VoxelShape getRenderShape(BlockState state, IBlockReader worldIn, BlockPos pos) {
             return VoxelShapes.empty();
