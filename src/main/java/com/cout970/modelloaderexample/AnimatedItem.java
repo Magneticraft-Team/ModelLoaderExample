@@ -36,9 +36,7 @@ public class AnimatedItem {
         ModelConfig itemModel = new ModelConfig(
             new ResourceLocation(MOD_ID + ":models/staff.gltf"),
             ItemTransforms.BLOCK_DEFAULT
-        ).withAnimation(true)
-            .withItemRenderer(true)
-            .withBake(false);
+        ).withAnimation(true).withItemRenderer(true);
 
         event.registerModel(MOD_ID, "staff", "inventory", itemModel);
         event.registerModel(MOD_ID, "staff_normal", "inventory",

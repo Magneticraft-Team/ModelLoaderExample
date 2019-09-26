@@ -1,0 +1,10 @@
+{
+    "item.animated_item.staff": "Animated Item (BLOCK_DEFAULT)",
+    "item.animated_item.staff_normal": "Animated Item (ITEM_DEFAULT)",
+    "item.simple_item.staff": "Simple Item (BLOCK_DEFAULT)",
+    "item.simple_item.staff_normal": "Simple Item (ITEM_DEFAULT)",
+    "block.simple_block.engine": "Simple Block",
+    "block.rotable_block.engine": "Rotable Block",
+    "block.tile_block.engine": "Tile Block",
+    "block.animated_block.engine": "Animated Block"
+}

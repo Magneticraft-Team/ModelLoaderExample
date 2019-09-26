@@ -2,13 +2,6 @@ modLoader="javafml"
 loaderVersion="[28,)"
 
 [[mods]]
-modId="examplemod"
-version="${file.jarVersion}"
-displayName="Example Mod"
-authors="Cout970"
-description=""
-
-[[mods]]
 modId="simple_item"
 version="${file.jarVersion}"
 displayName="Simple item with custom 3D model"
@@ -62,7 +55,7 @@ description=""
     versionRange="[28,)" #mandatory
     ordering="NONE"
     side="BOTH"
-# Here's another dependency
+
 [[dependencies.examplemod]]
     modId="minecraft"
     mandatory=true
