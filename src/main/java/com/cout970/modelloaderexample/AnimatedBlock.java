@@ -19,7 +19,6 @@ import net.minecraft.block.DirectionalBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.model.ModelRotation;
-import net.minecraft.client.renderer.texture.AtlasTexture;
 import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
@@ -230,10 +229,7 @@ public class AnimatedBlock {
             Direction dir = te.getBlockState().get(EngineBlock.FACING);
             Utilities.rotateAroundCenter(dir);
             Utilities.customRotate(0, 0, -90, Utilities.BLOCK_CENTER);
-            float now = Utilities.worldTime(te.getWorld(), partialTicks);
-//            GlStateManager.scalef(1/16f, 1/16f, 1/16f);
-//            GlStateManager.scalef(1f, 1/16f, 1/16f);
-            bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
+            float now = Utilities.worldTime();
             model.render(now / 20f);
         }
     }

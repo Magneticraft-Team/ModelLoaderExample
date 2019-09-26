@@ -23,12 +23,12 @@ public class SimpleItem {
     private void registerModels(final ModelRegisterEvent event) {
         ModelConfig itemModel = new ModelConfig(
             new ResourceLocation(MOD_ID + ":models/staff.gltf"),
-            ItemTransforms.TOOL_DEFAULT
+            ItemTransforms.BLOCK_DEFAULT
         );
 
         event.registerModel(MOD_ID, "staff", "inventory", itemModel);
         event.registerModel(MOD_ID, "staff_normal", "inventory",
-                                       itemModel.withItemTransforms(ItemTransforms.ITEM_DEFAULT)
+                            itemModel.withItemTransforms(ItemTransforms.ITEM_DEFAULT)
         );
     }
 
