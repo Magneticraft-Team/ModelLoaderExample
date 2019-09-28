@@ -35,50 +35,78 @@ public class RotableBlock {
     public static final String MOD_ID = "rotable_block";
 
     public RotableBlock() {
+        // We subscribe the mod to the event ModelRegisterEvent to register models
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::registerModels);
     }
 
     private void registerModels(final ModelRegisterEvent event) {
+        // Basic config with most defaults
         ModelConfig baseModel = new ModelConfig(
             new ResourceLocation(MOD_ID + ":models/engine.gltf"),
             ItemTransforms.BLOCK_DEFAULT
         );
 
+        // For each direction we register a different model
+        // Note: different models using the same model file are loaded only once from disk
         for (Direction dir : Direction.values()) {
-            String name = "facing=" + dir.toString().toLowerCase();
-            // The original model looks towards east, so we apply an extra X90_Y90 rotation
+            // We get the name of this state
+            String stateName = "facing=" + dir.toString().toLowerCase();
+
+            // We create a copy of the model config with a variation in the rotation,
+            // the function 'withDirection' automatically applies the correct rotation
+            // for each direction, the original model looks towards east, so we apply
+            // an extra X90_Y90 rotation
             ModelConfig model = baseModel.withDirection(dir, ModelRotation.X90_Y90);
 
-            event.registerModel(MOD_ID, "engine", name, model);
+            // We register this block model using the correct state name
+            event.registerModel(MOD_ID, "engine", stateName, model);
         }
+        // We register the item model, which is the same, 'inventory' is used to target the item model
         event.registerModel(MOD_ID, "engine", "inventory", baseModel);
     }
 
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = MOD_ID)
     public static class RegistryEvents {
 
+        /**
+         * Reference to the Engine block
+         */
         private static Block ENGINE = new EngineBlock(Block.Properties.create(Material.IRON));
 
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
+            // Sets the Block registry name, if we don't add it the game crashes
             ENGINE.setRegistryName(MOD_ID, "engine");
+            // We register the block
             event.getRegistry().register(ENGINE);
         }
 
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
+            // We create a BlockItem to be able to place the block in inventories
             Item engineItem = new BlockItem(ENGINE, new Item.Properties().group(ItemGroup.REDSTONE));
+            // We use the same registry name as the block, and make sure itś not null
             engineItem.setRegistryName(Objects.requireNonNull(ENGINE.getRegistryName()));
+            // We register the item
             event.getRegistry().register(engineItem);
         }
     }
 
+    /**
+     * We create a custom block class to add a blockstate for each direction.
+     * The block extends AbstractGlassBlock to be considered transparent and
+     * render the model on the empty space
+     */
     public static class EngineBlock extends AbstractGlassBlock {
 
+        /**
+         * The rotation property, stores the direction that the engine is facing
+         */
         public static final DirectionProperty FACING = DirectionalBlock.FACING;
 
         public EngineBlock(Properties properties) {
             super(properties);
+            // Default state used in the inventory
             setDefaultState(getDefaultState().with(FACING, Direction.NORTH));
         }
 
